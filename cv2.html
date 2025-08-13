@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Elf Adası</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            overflow-x: hidden;
+            text-align: center;
+        }
+        
+        /* ARKA PLAN */
+        .hero-section {
+            height: 100vh;
+            background: url('image/3.jpg') center/cover no-repeat fixed;
+            position: relative;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        /* BUTONLAR */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            width: 90%;
+            max-width: 800px;
+        }
+        .btn {
+            background: #450000;
+            color: white;
+            border: 2px solid #5a0000;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s;
+            font-family: 'Poppins';
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            min-width: 150px;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn:hover {
+            background: #5a0000;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+        }
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: 0.6s;
+        }
+        .btn:hover::after {
+            left: 100%;
+        }
+        
+        /* İÇERİK KUTUSU */
+        .content-box {
+            background: rgba(20, 20, 20, 0.85);
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 700px;
+            margin: 40px auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid #450000;
+            opacity: 0;
+            animation: fadeInUp 1s 0.5s forwards;
+            transition: all 0.3s;
+        }
+        .content-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+        }
+        
+        /* BAŞLIK & ANİMASYONLAR */
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1s 0.2s forwards;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        h1::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: #a3436e;
+            margin: 15px auto;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* MOBİL */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .btn {
+                padding: 10px 20px;
+                min-width: 120px;
+            }
+            .content-box {
+                padding: 20px;
+                margin: 20px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hero-section">
+        <div class="hero-overlay">
+            <h1>Welcome To Elf!</h1>
+            
+            <div class="button-container">
+                <a href="https://linkedin.com/in/elif-yavuz" target="_blank">
+                    <button class="btn">LinkedIn</button>
+                </a>
+                <a href="https://github.com/V4L3RINA" target="_blank">
+                    <button class="btn">GitHub</button>
+                </a>
+                <a href="https://steamcommunity.com/profiles/76561199130658943/" target="_blank">
+                    <button class="btn">Steam</button>
+                </a>
+                <a href="https://open.spotify.com/user/tmuhdn2pt8xc0b7v1q7a7azrz" target="_blank">
+                    <button class="btn">Spotify</button>
+                </a>
+                <a href="https://suno.com/@valerina" target="_blank">
+                    <button class="btn">Suno</button>
+                </a>
+            </div>
+            
+            <div class="content-box">
+                <button onclick="tikla()" class="btn" style="margin: 10px auto; display: block;">Özgeçmiş</button>
+                <p id="yazi1" style="color: #f0f0f0; text-align: left; line-height: 1.6;"></p>
+                
+                <button onclick="tikla2()" class="btn" style="margin: 30px auto 10px; display: block;">İlgi Alanlarım</button>
+                <p id="yazi2" style="color: #f0f0f0; text-align: left; line-height: 1.6;"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function tikla() {
+            document.getElementById("yazi1").innerHTML = "7 Nisan 2005'de doğdum. Şu an Bandırma On Yedi Eylül Üniversitesi Ekonometri okuyorum. Aynı zamanda Anadolu açıköğretim üniversitesinde Bilgisayar programcılığı ikinci sınıf öğrencisiyim.";
+        }
+        function tikla2() {
+            document.getElementById("yazi2").innerHTML = "Yapay Zeka üzerinden müzik oluşturmayı, web sitesi kurup tasarım yapmakta ilgileniyorum. Yeni çıkan teknoloji ürünleri inceleyip özelliklerini keşfediyorum. Yazılım dili konuşunda kendimi geliştirme aşamasındayım. Şu ana kadar python dilinde küçük projeler üzerinde ilgileniyorum.";
+        }
+        
+        // Sayfa açıldığında otomatik içerik yükle
+        window.onload = function() {
+            tikla();
+            tikla2();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cv.css">
+    <title>Elf Adası</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #000;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        
+        /* ANA BÖLÜM */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            background: url('image/4.jpg') center/cover no-repeat; /* 4.jpg arka plan oldu */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            width: 90%;
+            max-width: 1000px;
+        }
+        
+        /* BUTONLAR (ÖZELLEŞTİRİLMİŞ) */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px auto;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        .btn {
+            background: #450000; /* Bordo rengi */
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Poppins';
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+            min-width: 150px;
+        }
+        .btn:hover {
+            background: #5a0000;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+        }
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        .btn:hover::after {
+            left: 100%;
+        }
+        
+        /* İÇERİK */
+        .content-section {
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        footer {
+            margin-top: 50px;
+            color: #888;
+            font-size: 0.9rem;
+            padding: 20px;
+            border-top: 1px solid #333;
+        }
+        
+        /* MOBİL ÖZEL AYARLAR */
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 70vh !important;
+            }
+            .bg-image {
+                height: 100% !important;
+                width: 100% !important;
+                object-position: center top;
+            }
+        }
+    </style>
+    <style>
+    /* ... Diğer stiller aynı ... */
+    .hero-section {
+        background: url('image/3.jpg') center/cover no-repeat;
+        background-size: cover;
+        -webkit-background-size: cover;
+        background-attachment: scroll;
+        height: 100vh;
+        position: relative;
+    }
+
+    @media (max-width: 768px) {
+        .hero-section {
+            height: 70vh;
+            background-attachment: local;
+            background-position: center top;
+        }
+        .hero-overlay {
+            padding: 15px;
+        }
+    }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ANA BÖLÜM (4.jpg ARKA PLAN) -->
+    <div class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 style="font-size: 3rem; margin-bottom: 1rem; text-shadow: 0 2px 5px rgba(0,0,0,0.5);">Welcome To Elf!</h1>
+            
+            <!-- BUTONLAR -->
+            <div class="button-container">
+                <a href="https://linkedin.com/in/elif-yavuz" target="_blank">
+                    <button class="btn">LinkedIn</button>
+                </a>
+                <a href="https://github.com/V4L3RINA" target="_blank">
+                    <button class="btn">GitHub</button>
+                </a>
+                <a href="https://steamcommunity.com/profiles/76561199130658943/" target="_blank">
+                    <button class="btn">Steam</button>
+                </a>
+                <a href="https://open.spotify.com/user/tmuhdn2pt8xc0b7v1q7a7azrz" target="_blank">
+                    <button class="btn">Spotify</button>
+                </a>
+                <a href="https://suno.com/@valerina" target="_blank">
+                    <button class="btn">Suno</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- İÇERİK (FOTOĞRAFSIZ) -->
+    <div class="content-section">
+        <!-- ABOUT ME BUTONU -->
+        <a href="cv2.html">
+            <button class="btn" style="margin: 0 auto; max-width: 200px; display: block;">About Me</button>
+        </a>
+    </div>
+
+    <footer>
+        © 2024 Elf Adası. Tüm hakları saklıdır.
+    </footer>
+</body>
+</html>
